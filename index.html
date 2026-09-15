@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tartarugas Fofinhas</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--verde-folha: #5caa72;
+			--verde-claro: #e8f6e8;
+			--verde-pistache: #ccebc9;
+			--verde-escuro: #24533a;
+			--creme: #fffdf4;
+		}
+
+		body {
+			position: relative;
+			overflow-x: hidden;
+			min-height: 100vh;
+			color: var(--verde-escuro);
+			background-color: #f5fff0;
+			background-image: radial-gradient(rgba(92, 170, 114, .13) 1px, transparent 1px), linear-gradient(145deg, #f5fff0 0%, #e3f4dd 55%, #d0ebd0 100%);
+			background-size: 22px 22px, auto;
+			font-family: 'Nunito', sans-serif;
+		}
+
+		h1, h2, h3, .navbar-brand {
+			font-family: 'Fredoka', sans-serif;
+		}
+
+		.navbar {
+			padding: .8rem 0;
+			background-color: #fffdf4;
+			border-bottom: 3px solid var(--verde-pistache);
+			box-shadow: 0 5px 16px rgba(36, 83, 58, .08);
+		}
+
+		.navbar-brand {
+			color: var(--verde-escuro);
+			font-size: 1.35rem;
+			transition: color .2s ease, transform .2s ease;
+		}
+
+		.navbar-brand:hover {
+			color: var(--verde-folha);
+			transform: translateY(-2px);
+		}
+
+		.nav-link {
+			padding: .55rem .9rem !important;
+			color: var(--verde-escuro);
+			font-weight: 700;
+			border-radius: 999px;
+			transition: color .2s ease, transform .2s ease;
+		}
+
+		.nav-link:hover,
+		.nav-link:focus {
+			background-color: var(--verde-claro);
+			color: var(--verde-folha);
+			transform: translateY(-1px);
+		}
+
+		.navbar-toggler {
+			border-color: rgba(36, 83, 58, .25);
+		}
+
+		.navbar-toggler:focus {
+			box-shadow: 0 0 0 .2rem rgba(92, 170, 114, .2);
+		}
+
+		.btn-leaf {
+			color: white;
+			background-color: var(--verde-folha);
+			border: 0;
+			box-shadow: 0 6px 14px rgba(36, 83, 58, .18);
+			transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+		}
+
+		.btn-leaf:hover {
+			color: white;
+			background-color: var(--verde-escuro);
+			transform: translateY(-2px);
+			box-shadow: 0 9px 18px rgba(36, 83, 58, .24);
+		}
+
+		.page-shell {
+			max-width: 1180px;
+		}
+
+		.jumbotron {
+			position: relative;
+			overflow: hidden;
+			min-height: 290px;
+			padding: 3.5rem;
+			border-radius: 28px;
+			background: var(--verde-folha) url('https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=1400&q=85') center/cover;
+			box-shadow: 0 16px 35px rgba(36, 83, 58, .15);
+			transition: box-shadow .3s ease, transform .3s ease;
+		}
+
+		.jumbotron:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 20px 42px rgba(36, 83, 58, .2);
+		}
+
+		.jumbotron::before {
+			position: absolute;
+			inset: 0;
+			content: '';
+			background: linear-gradient(90deg, rgba(29, 83, 49, .82), rgba(58, 130, 76, .2));
+		}
+
+		.jumbotron-content {
+			position: relative;
+			max-width: 600px;
+			color: white;
+		}
+
+		.jumbotron h1 {
+			font-family: 'Cormorant Garamond', serif;
+			font-weight: 600;
+			font-size: clamp(2.5rem, 6vw, 4.5rem);
+			line-height: .92;
+			letter-spacing: .01em;
+		}
+
+		.turtle-detail {
+			display: inline-flex;
+			align-items: center;
+			gap: .45rem;
+			padding: .4rem .8rem;
+			color: var(--verde-escuro);
+			font-size: .82rem;
+			font-weight: 700;
+			letter-spacing: .04em;
+			text-transform: uppercase;
+			border: 1px solid rgba(92, 170, 114, .25);
+			border-radius: 999px;
+			background-color: rgba(255, 253, 244, .8);
+		}
+
+		.section-card {
+			position: relative;
+			overflow: hidden;
+			height: 100%;
+			padding: 1.8rem;
+			border: 1px solid rgba(92, 170, 114, .18);
+			border-radius: 20px;
+			background-color: rgba(255, 253, 244, .9);
+			box-shadow: 0 8px 20px rgba(36, 83, 58, .08);
+			transition: transform .25s ease, box-shadow .25s ease;
+		}
+
+		.section-card::after {
+			position: absolute;
+			right: -18px;
+			bottom: -24px;
+			width: 92px;
+			height: 58px;
+			content: '';
+			border: 2px solid rgba(92, 170, 114, .2);
+			border-radius: 70% 30% 70% 30%;
+			transform: rotate(-25deg);
+		}
+
+		.section-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 13px 28px rgba(36, 83, 58, .13);
+		}
+
+		.turtle-card {
+			position: relative;
+			border: 0;
+			border-radius: 20px;
+			overflow: hidden;
+			background-color: var(--verde-pistache);
+			transition: transform .2s ease, box-shadow .2s ease;
+		}
+
+		.turtle-card::after {
+			position: absolute;
+			right: 1rem;
+			top: 1rem;
+			content: '🐢';
+			font-size: 1.35rem;
+			filter: drop-shadow(0 2px 2px rgba(36, 83, 58, .2));
+			transition: transform .25s ease;
+		}
+
+		.turtle-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 12px 24px rgba(36, 83, 58, .14);
+		}
+
+		.turtle-card img {
+			width: 100%;
+			height: 170px;
+			object-fit: cover;
+			transition: transform .4s ease;
+		}
+
+		.turtle-card:hover img {
+			transform: scale(1.05);
+		}
+
+		.turtle-card:hover::after {
+			transform: rotate(-12deg) scale(1.12);
+		}
+
+		.badge-soft {
+			color: var(--verde-escuro);
+			background-color: var(--verde-pistache);
+		}
+
+		footer {
+			color: #47785a;
+		}
+
+		@media (max-width: 767.98px) {
+			.jumbotron {
+				min-height: 340px;
+				padding: 2rem;
+			}
+
+			.section-card {
+				padding: 1.4rem;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg" aria-label="Barra de navegação principal">
+		<div class="container page-shell">
+			<a class="navbar-brand" href="#inicio">🐢 Tartarugas &amp; Afeto</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="menuPrincipal">
+				<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+					<li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+					<li class="nav-item"><a class="nav-link" href="#tartarugas">Tartarugas</a></li>
+					<li class="nav-item"><a class="nav-link" href="#cuidados">Cuidados</a></li>
+					<li class="nav-item ms-lg-2"><a class="btn btn-leaf rounded-pill px-3" href="#tartarugas">Conhecer agora</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main id="inicio" class="container page-shell py-4 py-md-5">
+		<div class="row g-4 mb-4">
+			<div class="col-12">
+				<section class="jumbotron d-flex align-items-center">
+					<div class="jumbotron-content">
+						<span class="turtle-detail mb-3">🐢 calma, carinho e casquinhas</span>
+						<h1 class="mb-3">Pequenas tartarugas, grandes fofuras.</h1>
+						<p class="lead mb-0">Um jardim digital para conhecer personagens que adoram folhas fresquinhas e dias tranquilos.</p>
+						<a class="btn btn-light rounded-pill mt-4 px-4" href="#sobre">Explorar o jardim <span aria-hidden="true">↓</span></a>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<div id="sobre" class="row g-4 mb-4">
+			<div class="col-12 col-md-6">
+				<section class="section-card">
+					<span class="fs-1">🌱</span>
+					<h2 class="h3 mt-3">Um lar verdinho</h2>
+					<p class="mb-0">Espaços com sombra, água limpa e muitas plantinhas tornam cada passeio uma aventura.</p>
+				</section>
+			</div>
+			<div class="col-12 col-md-6">
+				<section class="section-card">
+					<span class="fs-1">💚</span>
+					<h2 class="h3 mt-3">Jeito de tartaruga</h2>
+					<p class="mb-0">Sem pressa, com curiosidade e um sorriso tímido: esse é o ritmo perfeito por aqui.</p>
+				</section>
+			</div>
+		</div>
+
+		<div id="tartarugas" class="row g-4 mb-4">
+			<div class="col-12 col-md-4">
+				<article class="card turtle-card h-100">
+					<img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=700&q=85" alt="Tartaruga em um ambiente verde" loading="lazy">
+					<div class="card-body">
+						<h3 class="h5">Luna</h3>
+						<p class="card-text mb-0">Ama cochilos ao sol.</p>
+					</div>
+				</article>
+			</div>
+			<div class="col-12 col-md-4">
+				<article class="card turtle-card h-100">
+					<img src="https://images.unsplash.com/photo-1518467166778-b88f373ffec7?auto=format&fit=crop&w=700&q=85" alt="Tartaruga olhando para a câmera" loading="lazy">
+					<div class="card-body">
+						<h3 class="h5">Pistache</h3>
+						<p class="card-text mb-0">Especialista em explorar.</p>
+					</div>
+				</article>
+			</div>
+			<div class="col-12 col-md-4">
+				<article class="card turtle-card h-100">
+					<img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=85" alt="Tartaruga nadando" loading="lazy">
+					<div class="card-body">
+						<h3 class="h5">Nina</h3>
+						<p class="card-text mb-0">Nada como uma campeã.</p>
+					</div>
+				</article>
+			</div>
+		</div>
+
+		<div id="cuidados" class="row g-4 mb-4">
+			<div class="col-12 col-md-4">
+				<section class="section-card text-center">
+					<span class="display-4">🥬</span>
+					<h2 class="h4 mt-3">Lanchinho do dia</h2>
+					<p class="mb-0">Folhas crocantes para deixar qualquer tartaruga contente.</p>
+				</section>
+			</div>
+			<div class="col-12 col-md-8">
+				<section class="section-card d-flex flex-column justify-content-center">
+					<h2 class="h3">A natureza pede calma</h2>
+					<p class="mb-0">Observe, respire e deixe a curiosidade guiar o próximo passo. Aqui, cada descoberta acontece no seu próprio tempo.</p>
+				</section>
+			</div>
+		</div>
+
+		<footer class="text-center pt-2">Feito com carinho para quem ama cascos e corações verdes.</footer>
+	</main>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
