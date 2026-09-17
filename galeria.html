@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria de Tartarugas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tartarugas.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top" aria-label="Menu principal">
+    <div class="container container-shell">
+      <a class="navbar-brand" href="index.html">🐢 Tartarugas &amp; Afeto</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link active" href="galeria.html">Galeria</a></li>
+          <li class="nav-item"><a class="nav-link" href="cuidados.html">Cuidados</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-leaf rounded-pill px-3" href="cuidados.html">Cuidados</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container container-shell py-4 py-md-5">
+    <section class="page-hero mb-4 mb-md-5">
+      <div class="hero-copy">
+        <span class="eyebrow">📸 memória verde</span>
+        <h1>Galeria de momentos fofinhos e cheios de vida.</h1>
+        <p class="lead-soft mb-0">Cada foto revela um detalhe: o brilho do casco, o conforto do sol, a curiosidade do olhar e a calma de um mundo feito de paz.</p>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-4">
+          <div class="feature-panel h-100">
+            <span class="icon-badge mb-3">☀️</span>
+            <h2 class="h4">Amanhecer</h2>
+            <p class="mb-0">O sol suave e as pedras quentinhas fazem as tartarugas despertarem com energia tranquila e muito charme.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="feature-panel h-100">
+            <span class="icon-badge mb-3">🌊</span>
+            <h2 class="h4">Nado leve</h2>
+            <p class="mb-0">Entre água e vegetação, o movimento segue em ritmo elegante, como uma dança silenciosa e natural.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="feature-panel h-100">
+            <span class="icon-badge mb-3">🌱</span>
+            <h2 class="h4">Descanso</h2>
+            <p class="mb-0">Em um cantinho tranquilo, as tartarugas encontram o descanso perfeito entre folhas, sombra e aconchego.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="utility-bar">
+        <button type="button" class="utility-btn" data-theme-toggle aria-pressed="false">Modo foco</button>
+        <input id="filtroGaleria" class="search-field" type="search" placeholder="Filtrar por nome ou tema" aria-label="Filtrar imagens da galeria">
+        <span class="counter-badge" id="favCount" aria-live="polite">0</span>
+      </div>
+
+      <div class="filter-row" aria-label="Filtros da galeria">
+        <button type="button" class="filter-chip active" data-filter="all">Todas</button>
+        <button type="button" class="filter-chip" data-filter="sol">Sol</button>
+        <button type="button" class="filter-chip" data-filter="mar">Mar</button>
+        <button type="button" class="filter-chip" data-filter="natureza">Natureza</button>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card" data-title="Refúgio costeiro" data-tags="mar praia enseada" data-filter="mar">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Hawaii_turtle_2.JPG" alt="Tartaruga marinha na costa do Havaí" loading="lazy">
+          <div class="card-body">
+            <h3>Refúgio costeiro</h3>
+            <p>Um momento de paz na enseada.</p>
+          </div>
+        </article>
+        <article class="gallery-card" data-title="Olhar curioso" data-tags="água mar observação" data-filter="mar">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Total_internal_reflection_of_Chelonia_mydas.jpg" alt="Tartaruga verde em água cristalina" loading="lazy">
+          <div class="card-body">
+            <h3>Olhar curioso</h3>
+            <p>Observando o mundo com calma.</p>
+          </div>
+        </article>
+        <article class="gallery-card" data-title="Casco único" data-tags="raridade albino natureza" data-filter="natureza">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Chelonia_mydas_albino_p1440273.jpg" alt="Tartaruga marinha albina" loading="lazy">
+          <div class="card-body">
+            <h3>Casco único</h3>
+            <p>Uma raridade linda e delicada.</p>
+          </div>
+        </article>
+        <article class="gallery-card" data-title="Respiração calma" data-tags="mar ar respiração" data-filter="mar">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Chelonia_mydas_is_going_for_the_air_edit.jpg" alt="Tartaruga subindo para respirar" loading="lazy">
+          <div class="card-body">
+            <h3>Respiração calma</h3>
+            <p>Entre o mar e o ar sem pressa.</p>
+          </div>
+        </article>
+        <article class="gallery-card" data-title="Banho de sol" data-tags="sol praia descanso" data-filter="sol">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Green_turtle_Chelonia_mydas_is_basking_on_Punaluu_Beach_Big_Island_of_Hawaii.jpg" alt="Tartaruga tomando sol em praia" loading="lazy">
+          <div class="card-body">
+            <h3>Banho de sol</h3>
+            <p>O descanso perfeito ao calor suave.</p>
+          </div>
+        </article>
+        <article class="gallery-card" data-title="Alimentação tranquila" data-tags="natureza alimentação grama marinha" data-filter="natureza">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Green_Sea_Turtle_grazing_seagrass.jpg" alt="Tartaruga alimentando-se de grama marinha" loading="lazy">
+          <div class="card-body">
+            <h3>Alimentação tranquila</h3>
+            <p>Ritmo natural em busca de sustento.</p>
+          </div>
+        </article>
+        <article class="gallery-card" data-title="Recife vivo" data-tags="mar recife vida" data-filter="mar">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Sea_Turtle_in_Apo_Island.jpg" alt="Tartaruga marinha em recife" loading="lazy">
+          <div class="card-body">
+            <h3>Recife vivo</h3>
+            <p>Um lar cheio de vida e movimento.</p>
+          </div>
+        </article>
+        <article class="gallery-card" data-title="Laguna verde" data-tags="mar lagoa verde" data-filter="mar">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Green_sea_turtle_%28Chelonia_mydas%29_Moorea.jpg" alt="Tartaruga marinha em lagoa tropical" loading="lazy">
+          <div class="card-body">
+            <h3>Laguna verde</h3>
+            <p>Entre água transparente e calma.</p>
+          </div>
+        </article>
+        <article class="gallery-card" data-title="Natureza em paz" data-tags="natureza calma contemplação" data-filter="natureza">
+          <button type="button" class="favorite-btn" data-favorite aria-label="Adicionar aos favoritos">♡</button>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Chelonia_mydas_is_going_for_the_air_edit.jpg" alt="Tartaruga subindo para respirar" loading="lazy">
+          <div class="card-body">
+            <h3>Natureza em paz</h3>
+            <p>Um cenário perfeito para contemplar.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="row g-4 align-items-center">
+      <div class="col-lg-7">
+        <div class="section-card h-100">
+          <span class="icon-badge mb-3">🧡</span>
+          <h2 class="section-title">Por que essas imagens encantam tanto?</h2>
+          <p class="mb-3">Porque cada tartaruga transmite uma sensação de tranquilidade. Seus movimentos parecem feitos para desacelerar o mundo e lembrar que há beleza em pequenos gestos.</p>
+          <ul class="checklist">
+            <li>Silêncio e gentileza como parte da rotina.</li>
+            <li>Ambientes naturais com texturas, folhas e luz suave.</li>
+            <li>Detalhes que valorizam a delicadeza e o cuidado.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="full-width-image">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Green_turtle_Chelonia_mydas_is_basking_on_Punaluu_Beach_Big_Island_of_Hawaii.jpg" alt="Tartaruga descansando em praia tropical" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-soft">
+    <div class="container container-shell">
+      <p class="mb-3">Feito com carinho para quem ama cascos, mares e um pouco de poesia verde.</p>
+      <nav aria-label="Navegação do rodapé" class="d-flex justify-content-center flex-wrap gap-3">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="cuidados.html">Cuidados</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
